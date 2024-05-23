@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - SwiftGlobe Payments Bank</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* General styles */
+        body {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            color: white; /* Set text color to white */
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5); /* Set same navbar background color as registration page */
+            padding: 10px 20px; /* Add padding for spacing */
+            display: flex; /* Align elements horizontally */
+            align-items: center; /* Align items vertically */
+            justify-content: space-between; /* Space out logo and navbar items */
+        }
+
+        /* Navbar brand styles */
+        .navbar-brand {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        /* Navbar links styles */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            color: #c0c0c0; /* Change color on hover */
+        }
+
+        /* Home section */
+        #homeSection {
+            text-align: center;
+            margin-top: 50px; /* Add top margin */
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+                align-items: center; /* Center align items */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <a class="navbar-brand" href="home.html">SwiftGlobe Payments Bank</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Create Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="balance.html">View Balance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="deposit.html">Deposit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="withdraw.html">Withdraw</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="transfer.html">Transfer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="homeSection" class="container">
+        <h2>Welcome to SwiftGlobe Payments Bank</h2>
+        <p>No account fees and charges. Enjoy the convenience of banking on your phone and no charges for online transactions.</p>
+        <p>Risk-free deposits. Your money is safe with us. We invest deposits only in government bonds. None of your deposits will be converted into risky assets.</p>
+        <p>VISA Debit Card. Use your free virtual card to make online purchases across all merchants accepting VISA cards. You can order a physical debit card through the Paytm Payments Bank section of your Paytm App.</p>
+        <p>Earn interest every month. Earn an interest of 2% per annum, payable monthly effective 1st August, 2023.</p>
+        <p>Real-time updated Passbook. View your transaction and balance in real-time in Passbook.</p>
+        <p>Highly Secure. Your account is secured with a special Passcode to ensure your account is safe.</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer - SwiftGlobe Payments Bank</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Internal CSS -->
+    <style>
+        /* General styles */
+        body {
+            background-image: url('bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            color: white; /* Set text color to white */
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5); /* Same navbar background color as home page */
+            padding: 10px 20px; /* Padding for spacing */
+            display: flex; /* Align elements horizontally */
+            align-items: center; /* Align items vertically */
+            justify-content: space-between; /* Space out logo and navbar items */
+        }
+
+        /* Navbar brand styles */
+        .navbar-brand {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+        }
+
+        /* Navbar links styles */
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .navbar ul li {
+            margin: 0 10px;
+        }
+
+        .navbar a:hover {
+            color: #c0c0c0; /* Change color on hover */
+        }
+
+        /* Transfer Form styles */
+        .container {
+            margin-top: 50px; /* Add top margin */
+        }
+
+        /* Adjust form colors */
+        .form-group label, .form-control, .btn-primary {
+            color: white; /* Set label and form text color to white */
+        }
+
+        /* Adjust form placeholder color */
+        .form-control::placeholder {
+            color: white; /* Set placeholder text color to white for better visibility */
+        }
+
+        /* Adjust form control background color and border color */
+        .form-control {
+            background-color: rgba(255, 255, 255, 0.1); /* Add semi-transparent background */
+            border-color: white; /* Add white border to form control */
+        }
+
+        /* Adjust button style */
+        .btn-primary {
+            background-color: cyan; /* Change button background color */
+            border-color: cyan;
+            color: white; /* Set button text color to white */
+        }
+
+        .btn-primary:hover {
+            background-color: #00b3b3; /* Change button color on hover */
+            border-color: #00b3b3;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column; /* Stack items vertically on smaller screens */
+                align-items: center; /* Center align items */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <a class="navbar-brand" href="home.html">SwiftGlobe Payments Bank</a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration.html">Create Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="balance.html">View Balance</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="deposit.html">Deposit</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="withdraw.html">Withdraw</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="transfer.html">Transfer</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" onclick="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Transfer Form -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <h2 class="text-center mb-4">Transfer Funds</h2>
+                <form id="transferForm">
+                    <div class="form-group">
+                        <label for="transferAmount">Transfer Amount</label>
+                        <input type="number" class="form-control" id="transferAmount" name="transferAmount" placeholder="Enter amount to transfer" min="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sourceAccount">Source Account Number</label>
+                        <input type="text" class="form-control" id="sourceAccount" name="sourceAccount" placeholder="Enter your account number" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="destinationAccount">Destination Account Number</label>
+                        <input type="text" class="form-control" id="destinationAccount" name="destinationAccount" placeholder="Enter the recipient's account number" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Transfer</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Files -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

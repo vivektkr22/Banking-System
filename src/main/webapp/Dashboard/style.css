@@ -1,0 +1,54 @@
+
+/* Navbar Styles */
+.navbar {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.navbar .navbar-brand {
+    color: black;
+    font-weight: bold;
+}
+
+.navbar .nav-link {
+    color: black;
+}
+
+.navbar .nav-link:hover {
+    color: darkgray;
+}
+
+/* Form Styles */
+.form-control {
+    background-color: white;
+    color: black;
+    border: 1px solid gray;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.form-control::placeholder {
+    color: gray;
+}
+
+.btn-primary {
+    background-color: cyan;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.btn-primary:hover {
+    background-color: darkcyan;
+}
+
+/* Container and Layout */
+.container {
+    padding: 20px;
+}
+
+h2.text-center {
+    margin-bottom: 20px;
+}

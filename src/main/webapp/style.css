@@ -1,0 +1,21 @@
+/* Custom Styles */
+body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+}
+
+.container {
+  color: white;
+}
+
+.register-link, .login-link {
+  color: cyan;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover, .login-link:hover {
+  color: cyan;
+}

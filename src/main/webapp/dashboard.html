@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bank Application - Dashboard</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    body {
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-position: center;
+      /* Add a background color overlay with reduced opacity */
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    /* Adjust text color to make it more visible */
+    .container {
+      color: rgb(255, 255, 255);
+    }
+  
+    /* Change the color of the register and login links */
+    .register-link, .login-link {
+      color: cyan;
+      transition: color 0.3s ease; /* Smooth transition */
+    }
+
+    /* Change color of links on hover */
+    .register-link:hover, .login-link:hover {
+      color: cyan;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+    <a class="navbar-brand" href="#">SwiftGlobe Payments Bank</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showWelcome()">Welcome</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showRegistration()">Create account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showBalance()">View Balance</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showDeposit()">Deposit</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showWithdraw()">Withdraw</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="showTransfer()">Transfer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="logout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Content section for home -->
+  <div id="homeSection" class="container mt-5">
+    <h2>Welcome to SwiftGlobe Payments Bank</h2>
+    <p>No account fees and charges. Enjoy the convenience of banking on your phone and no charges for online transactions.</p>
+    <p>Risk-free deposits. Your money is safe with us. We invest deposits only in government bonds. None of your deposits will be converted into risky assets.</p>
+    <p>VISA Debit Card. Use your free virtual card to make online purchases across all merchants accepting VISA cards. You can order a physical debit card through the Paytm Payments Bank section of your Paytm App.</p>
+    <p>Earn interest every month. Earn an interest of 2% per annum, payable monthly effective 1st August, 2023.</p>
+    <p>Real-time updated Passbook. View your transaction and balance in real-time in Passbook.</p>
+    <p>Highly Secure. Your account is secured with a special Passcode to ensure your account is safe.</p>
+  </div>
+
+  <!-- Content section for create account -->
+  <div id="registrationForm" class="container mt-5" style="display: none;">
+    <!-- Registration form content -->
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <h2 class="text-center mb-4">Create account</h2>
+        <form>
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email address" required>
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" id="address" name="address" placeholder="Enter your address" required>
+          </div>
+          <div class="form-group">
+            <label for="panNumber">PAN Number</label>
+            <input type="text" class="form-control" id="panNumber" name="panNumber" placeholder="Enter your PAN number" required>
+          </div>
+          <div class="form-group">
+            <label for="initialDeposit">Initial Deposit Balance</label>
+            <input type="number" class="form-control" id="initialDeposit" name="initialDeposit" placeholder="Enter initial deposit amount" min="500" required>
+          </div>
+          <div class="form-group">
+            <label for="userIdReg">User ID</label>
+            <input type="text" class="form-control" id="userIdReg" name="userIdReg" placeholder="Choose a user ID" required>
+          </div>
+          <div class="form-group">
+            <label for="dateOfBirth">Date of Birth</label>
+            <input type="date" class="form-control" id="dateOfBirth" name="dateOfBirth" required>
+          </div>
+          <div class="form-group">
+            <label for="passwordReg">Password</label>
+            <input type="password" class="form-control" id="passwordReg" name="passwordReg" placeholder="Enter your password" required>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Create Account</button>
+        </form>
+        <p class="mt-3 text-center">Already Registered? <a href="#" class="login-link" onclick="showLogin()">Login to Continue</a></p>
+      </div>
+    </div>
+  </div>
+  <!-- Content section for viewing balance -->
+<div id="balanceSection" class="container mt-5" style="display: none;">
+  <h2>View Balance</h2>
+  <form id="viewBalanceForm">
+	<div class="form-group">
+      <label for="accountNumber">Account Number</label>
+      <input type="number" class="form-control" id="accountNumber" placeholder="Enter Account Number">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+  <!-- Content section for depositing money -->
+<div id="depositSection" class="container mt-5" style="display: none;">
+  <h2>Deposit</h2>
+  <form id="depositForm">
+    <div class="form-group">
+      <label for="depositAmount">Deposit Amount</label>
+      <input type="number" class="form-control" id="depositAmount" placeholder="Enter deposit amount" min="100" max="25000" required>
+    </div>
+    <div class="form-group">
+      <label for="accountNumber">Account Number</label>
+      <input type="number" class="form-control" id="accountNumber" placeholder="Enter account number" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Deposit</button>
+  </form>
+</div>
+
+  <!-- Content section for withdrawing money -->
+<div id="withdrawSection" class="container mt-5" style="display: none;">
+  <h2>Withdraw</h2>
+  <form id="withdrawForm">
+    <div class="form-group">
+      <label for="withdrawAmount">Withdraw Amount</label>
+      <input type="number" class="form-control" id="withdrawAmount" placeholder="Enter withdraw amount" required>
+    </div>
+    <div class="form-group">
+      <label for="accountNumber">Account Number</label>
+      <input type="number" class="form-control" id="accountNumber" placeholder="Enter account number" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Withdraw</button>
+  </form>
+</div>
+
+
+  <!-- Content section for transferring money -->
+<div id="transferSection" class="container mt-5" style="display: none;">
+  <h2>Transfer</h2>
+  <form id="transferForm">
+    <div class="form-group">
+      <label for="senderAccountNumber">Sender's Account Number</label>
+      <input type="number" class="form-control" id="senderAccountNumber" placeholder="Enter sender's account number" required>
+    </div>
+    <div class="form-group">
+      <label for="receiverAccountNumber">Receiver's Account Number</label>
+      <input type="number" class="form-control" id="receiverAccountNumber" placeholder="Enter receiver's account number" required>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount</label>
+      <input type="number" class="form-control" id="amount" placeholder="Enter amount to transfer" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Transfer</button>
+  </form>
+</div>
+
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Function to display the home section by default
+    window.onload = function() {
+      showHome();
+    };
+
+    function showHome() {
+      document.getElementById("welcomeSection").style.display = "block";
+      document.getElementById("registrationForm").style.display = "none";
+      document.getElementById("balanceSection").style.display = "none";
+      document.getElementById("depositSection").style.display = "none";
+      document.getElementById("withdrawSection").style.display = "none";
+      document.getElementById("transferSection").style.display = "none";
+    }
+
+    function showBalance() {
+      document.getElementById("welcomeSection").style.display = "none";
+      document.getElementById("registrationForm").style.display = "none";
+      document.getElementById("balanceSection").style.display = "block";
+      document.getElementById("depositSection").style.display = "none";
+      document.getElementById("withdrawSection").style.display = "none";
+      document.getElementById("transferSection").style.display = "none";
+    }
+
+    function showDeposit() {
+      document.getElementById("welcomeSection").style.display = "none";
+      document.getElementById("registrationForm").style.display = "none";
+      document.getElementById("balanceSection").style.display = "none";
+      document.getElementById("depositSection").style.display = "block";
+      document.getElementById("withdrawSection").style.display = "none";
+      document.getElementById("transferSection").style.display = "none";
+    }
+
+    function showWithdraw() {
+      document.getElementById("welcomeSection").style.display = "none";
+      document.getElementById("registrationForm").style.display = "none";
+      document.getElementById("balanceSection").style.display = "none";
+      document.getElementById("depositSection").style.display = "none";
+      document.getElementById("withdrawSection").style.display = "block";
+      document.getElementById("transferSection").style.display = "none";
+    }
+
+    function showTransfer() {
+      document.getElementById("welcomeSection").style.display = "none";
+      document.getElementById("registrationForm").style.display = "none";
+      document.getElementById("balanceSection").style.display = "none";
+      document.getElementById("depositSection").style.display = "none";
+      document.getElementById("withdrawSection").style.display = "none";
+      document.getElementById("transferSection").style.display = "block";
+    }
+    
+    function showRegistration() {
+      document.getElementById("welcomeSection").style.display = "none";
+      document.getElementById("registrationForm").style.display = "block";
+      document.getElementById("balanceSection").style.display = "none";
+      document.getElementById("depositSection").style.display = "none";
+      document.getElementById("withdrawSection").style.display = "none";
+      document.getElementById("transferSection").style.display = "none";
+    }
+
+    function logout() {
+      // Code to handle logout
+    }
+    
+     // Function to get query parameters from URL
+        function getQueryParam(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Check if loginSuccess query parameter is true and display alert
+        const loginSuccess = getQueryParam('loginSuccess');
+        if (loginSuccess === 'true') {
+            alert('Login successful!');
+        }
+    
+  </script>
+</body>
+</html>
